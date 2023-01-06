@@ -1,12 +1,13 @@
 import React from "react";
 import {
-  Form,
   FormControl,
   FormLabel,
   RadioGroup,
   FormControlLabel,
   Radio,
-} from "@material-ui/core";
+} from "@mui/material";
+// import Form from "@material-ui/core/Form";
+import Button from "@material-ui/core/Button";
 import { db } from "../utils/firebase"; // Import the Firebase Firestore object
 
 function FormTab() {
@@ -30,7 +31,7 @@ function FormTab() {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <FormControl component="fieldset">
         <FormLabel component="legend">Question 1</FormLabel>
         <RadioGroup
@@ -102,7 +103,7 @@ function FormTab() {
       </FormControl>
       {error && <p>{error}</p>}
       <Button type="submit">Submit</Button>
-    </Form>
+    </form>
   );
 }
 
