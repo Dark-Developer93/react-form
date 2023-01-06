@@ -1,6 +1,6 @@
 import React from "react";
 import { useDocumentData } from "react-firebase-hooks/firestore"; // Import the useDocumentData hook
-import { db } from "../utils/firebase"; // Import the Firebase Firestore object
+import { db, auth } from "../utils/firebase"; // Import the Firebase Firestore object
 import { Paper, Typography } from "@material-ui/core";
 
 function UserData() {
