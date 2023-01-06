@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <>
       {user ? (
         <>
           <AppTabs />
@@ -31,7 +31,7 @@ function App() {
       ) : (
         <LoginForm />
       )}
-    </div>
+    </>
   );
 }
 
