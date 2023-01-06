@@ -1,6 +1,6 @@
-import firebase from "firebase/app"; // Import the Firebase library
-import "firebase/auth"; // Import the Firebase Auth library
-import "firebase/firestore"; // Import the Firebase Firestore library
+import { initializeApp } from "firebase/app"; // Import the Firebase library
+import { getAuth } from "firebase/auth"; // Import the Firebase Auth library
+import { getFirestore } from "firebase/firestore"; // Import the Firebase Firestore library
 
 // Initialize Firebase with your project's credentials
 const firebaseConfig = {
@@ -13,10 +13,10 @@ const firebaseConfig = {
   appId: "YOUR_APP_ID",
 };
 
-firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 // Export the Firebase Auth object
-export const auth = firebase.auth();
+export const auth = getAuth();
 
 // Export the Firebase Firestore object
-export const db = firebase.firestore();
+export const db = getFirestore(app);
