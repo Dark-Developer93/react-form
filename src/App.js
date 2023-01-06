@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { auth } from "./utils/firebase"; // Import the auth object
+import AppTabs from "./components/AppTabs";
+import UserData from "./components/UserData";
+import LoginForm from "./components/LoginForm";
 
 function App() {
+  const [user, setUser] = React.useState(null);
+
+  React.useEffect(() => {
+    // Subscribe to the auth state and set the user in the state
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        setUser(authUser);
+      } else {
+        setUser(null);
+      }
+    });
+
+    // Unsubscribe from the listener on unmount
+    return () => unsubscribe();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {user ? (
+        <>
+          <AppTabs />
+          <UserData />
+        </>
+      ) : (
+        <LoginForm />
+      )}
     </div>
   );
 }
