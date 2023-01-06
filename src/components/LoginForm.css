@@ -1,0 +1,40 @@
+Add your CSS styles here .login-form {
+  /* Set the position and dimensions of the form */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+
+  /* Add a background image and style the form */
+  background-image: url(path/to/image.jpg);
+  background-size: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.LoginForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url(./bg-image.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Add animation to the form */
+.login-form.fade-in {
+  animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
