@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { db } from "../utils/firebase"; // Import the Firebase Firestore object
 import AddNewUser from "./AddNewUser"; // Import the AddNewUser form
 import Table from "@material-ui/core/Table";
